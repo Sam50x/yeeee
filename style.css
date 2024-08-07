@@ -1,0 +1,100 @@
+:root{
+    --font: rubik;
+    --header-font-size: 100px;
+    --shadow: drop-shadow(1px 1px 0.2rem black)
+}
+
+h2.header{
+    font-family: var(--font);
+    font-size: var(--header-font-size);
+    filter: var(--shadow);
+    color: cyan;
+    border: 2px solid indigo;
+    padding: 15px;
+    margin: 15px;
+}
+
+.nav{
+    background-color: indigo;
+    padding: 15px;
+    margin: 15px;
+}
+
+.nav-link{
+    color: cyan;
+}
+
+
+.album-container{
+    padding: 15px;
+    margin: 15px;
+    margin-top: 35px;
+    border: 5px solid;
+    display: grid;
+    grid-template-areas: 
+        "info cover"
+        "paragraph cover"
+        "space cover";
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+#info{
+    grid-area: info;
+}
+
+#paragraph{
+    grid-area: paragraph;
+}
+
+#cover{
+    grid-area: cover;
+}
+
+#cover img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    border: 2px solid;
+}
+
+p{
+    font-family: var(--font);
+}
+
+.inverted{
+    grid-template-areas: 
+        "cover info"
+        "cover paragraph"
+        "cover space";
+}
+
+@media (max-width: 500px){
+    .album-container{
+        padding: 15px;
+        margin: 15px;
+        border: 5px solid;
+        display: grid;
+        grid-template-areas: 
+            "info cover"
+            "info cover"
+            "paragraph paragraph";
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .inverted{
+        padding: 15px;
+        margin: 15px;
+        border: 5px solid;
+        display: grid;
+        grid-template-areas: 
+            "cover info"
+            "cover info"
+            "paragraph paragraph";
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
